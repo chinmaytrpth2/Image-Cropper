@@ -1,3 +1,8 @@
+**App.tsx** - Consists traditional approach using React Hooks ```{ useState }``` and managing the state within the App file.
+
+**App2.tsx** - Consists ```{useReducer}``` Hook to manage the state used in the App file.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
