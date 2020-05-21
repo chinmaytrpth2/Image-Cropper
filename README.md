@@ -1,4 +1,4 @@
-**App.tsx** - Consists traditional approach using React Hooks ```{ useState }``` and managing the state within the APP FILE.
+**App.tsx** - Consists traditional approach using React Hooks ```{ useState }``` and managing the state within the App file.
 
 **App2.tsx** - Consists ```{useReducer}``` Hook to manage the state used in the App file.
 
