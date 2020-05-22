@@ -17,6 +17,11 @@ const ImageItem: React.FC<Props> = ({ src, width, height, getImageData }) => {
   // Using useEffect for getting the canvas context and drawing the..
   // ..cropped image with dimensions passed through props ->
   useEffect(() => {
+
+    if(!src){
+      return;
+    }
+
     const ctx = canvas.current?.getContext("2d");
     if (ctx) {
       var img = new Image();
@@ -34,13 +39,14 @@ const ImageItem: React.FC<Props> = ({ src, width, height, getImageData }) => {
 
   return (
     <div className="canvas-case">
-      <canvas
+      {src && <canvas
         className="canvas"
         ref={canvas}
         width={width}
         height={height}
         onClick={CanvasToImage}
-      />
+        data-test='canvas'
+      />}
     </div>
   );
 };

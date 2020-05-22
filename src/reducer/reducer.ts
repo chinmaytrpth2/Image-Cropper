@@ -31,7 +31,6 @@ export function AppReducer(state: AppState, action: any) {
         imagePreview: action.payload,
         loading: false,
         onSubmit: true,
-        upload: false
       };
     }
     case ActionType.SetLoading: {
@@ -39,6 +38,7 @@ export function AppReducer(state: AppState, action: any) {
         ...state,
         loading: true,
         imagePreview: null,
+        upload: false
       };
     }
     case ActionType.SetImagePreview: {
