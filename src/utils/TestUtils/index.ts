@@ -1,6 +1,4 @@
-// import { shallow } from 'enzyme';
-
-// export const setUp = () => {
-//     const component = shallow(<canvas />);
-//     return component;
-// }
+export const findByTestAtrr = (component: any, attr: string) => {
+    const wrapper = component.find(`[data-test='${attr}']`);
+    return wrapper;
+};

@@ -2,14 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ImageItem from './ImageItem';
 
-// import {setUp} from '../../utils/TestUtils';
-
-// interface PropsType{
-//     src: string,
-//     getImageData: () => void,
-//     height?: number,
-//     width?: number
-// }
+import {findByTestAtrr} from '../../utils/TestUtils';
 
 const getImageData = () => {
     console.log("testing!");
@@ -34,7 +27,7 @@ describe('#Image Component', () => {
         })
 
         it('-Should render CANVAS Item without any Error', () => {
-            const component = wrapper.find("[data-test='canvas']");
+            const component = findByTestAtrr(wrapper, 'canvas');
             expect(component.length).toBe(1);
         })
     })
@@ -46,7 +39,8 @@ describe('#Image Component', () => {
         })
 
         it('-Should NOT render CANVAS Item ', () => {
-            const component = wrapper.find("[data-test='canvas']");
+            // const component = wrapper.find("[data-test='canvas']");
+            const component = findByTestAtrr(wrapper, 'canvas');
             expect(component.length).toBe(0);
         })
 
