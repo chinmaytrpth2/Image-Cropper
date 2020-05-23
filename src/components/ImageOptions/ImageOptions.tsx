@@ -18,20 +18,24 @@ const ImageDimensions = [
 ];
 
 const ImageOptions: React.FC<Props> = ({ src, getImageData }) => {
+
+  
   return (
     <React.Fragment>
-      <h3>Image Grid Preview</h3>
-      <h4>Choose an Image to upload!</h4>
-      <div className="imageGrid">
+      <h3 data-test="h3">Image Grid Preview</h3>
+      <h4 data-test="h4">Choose an Image to upload!</h4>
+      {/* //Altered for writing tests */}
+      {src && <div className="imageGrid" data-test="imageGrid"> 
         {ImageDimensions.map((dimension) => (
           <ImageItem
             src={src}
+            key={Math.random()} //For the sake of Test
             getImageData={getImageData}
             width={dimension.width}
             height={dimension.height}
           />
         ))}
-      </div>
+      </div>}
     </React.Fragment>
   );
 };

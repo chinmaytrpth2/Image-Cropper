@@ -66,9 +66,9 @@ const App2: React.FC = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App" data-test="App">
       <h1>Insider Assignment</h1>
-      <input type="file" onChange={inputFileHandler} />
+      <input type="file" onChange={inputFileHandler} data-test="input-file"/>
       {error && <h4 className="error">Incorrect Dimensions</h4>}
       {onSubmit && <h4 className="success">Image Uploaded Successfully</h4>}
       {showImageOptions && (
